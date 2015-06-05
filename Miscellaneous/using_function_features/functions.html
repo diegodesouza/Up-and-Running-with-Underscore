@@ -25,15 +25,32 @@
 
         // the throttle() function can be used to limit the number of
         // times that a function is executed when called repeatedly
-        function updateCharCount() {
-          var elem = document.querySelector("#text1");
-          document.querySelector("#charcount").textContent = (elem.value).length
-        }
+        //function updateCharCount() {
+          //var elem = document.querySelector("#text1");
+          //document.querySelector("#charcount").textContent = (elem.value).length
+        //}
         // will get executed once per second
         // _.throttle controlls how many the function gets called
-        updater = _.throttle(updateCharCount,1000);
-        document.querySelector("#text1").addEventListener("keydown", updater);
+        //updater = _.throttle(updateCharCount,1000);
+        //document.querySelector("#text1").addEventListener("keydown", updater);
 
+        // the bind() function binds a function to a given object, which becomes the
+        // value of the "this" keyword inside the function.
+        var myObj = {
+          firstname: "Diego",
+          lastname: "De Souza"
+        };
+        function dumpData1() {
+          log(this.firstname + " " + this.lastname)
+        };
+        function dumpData2() {
+          log(this.lastname + ", " + this.firstname)
+        };
+
+        var func = _.bind(dumpData1, myObj);
+        func();
+        func = _.bind(dumpData2, myObj);
+        func();
       });
     </script>
   </head>
