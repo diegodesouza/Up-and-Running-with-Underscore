@@ -35,6 +35,15 @@
                         "<span style='font-weight:bold'>School:</span> <span><%= item.school %></span></div>" +
                         "<% }); %>";
 
+      var studentInfo2 = "<% var grouped = _.groupBy(students, function(item) {return item.school;}); " +
+                      "for (i in grouped) { _.each(grouped[i], function(item) { %>" +
+                      "<div class='studentRec " +
+                      "<% (item.midterm_score + item.final_score) / 2 > 65 ? print('passingStudent') : print('failingStudent') %>'>" +
+                      "<span style='font-weight:bold'>Name:</span> <span><%= item.lastname %>, <%= item.firstname %> </span>" +
+                      "<span style='font-weight:bold'>School:</span> <span><%= item.school %></span></div>" +
+                      "<% })}; %>";
+
+
         window.addEventListener("load", function(e) {
 
         // compile the template string
