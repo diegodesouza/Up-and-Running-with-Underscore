@@ -26,11 +26,13 @@
       };
 
       var templateString = "<div><span>Name: <%= lastname %></span></div>";
+      var templateString2 = "<div><span>Name: <% print(lastname.toUpperCase()) %></span></div>";
 
       window.addEventListener("load", function(e) {
 
         // compile the template string
         var compiledTemplate = _.template(templateString);
+        var compiledTemplate = _.template(templateString2);
 
         // now we can call the template with different data
         var result = compiledTemplate({
