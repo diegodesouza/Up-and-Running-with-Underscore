@@ -14,7 +14,11 @@
       	//var result = _.filter(students, getPassingStudents);
 
         /* use the where() function to select items */
-  		  var result = _.where(students, {"school" : "Thoreau", "grade" : 10});
+  		  //var result = _.where(students, {"school" : "Thoreau", "grade" : 10});
+
+      	/* the reject() function is the opposite of filter() */
+        /* this invocation will return the failing students */
+      	var result = _.reject(students, getPassingStudents);
 
         /* now use each() to populate the list */
         _.each(result, function(elem, indx, list) {
