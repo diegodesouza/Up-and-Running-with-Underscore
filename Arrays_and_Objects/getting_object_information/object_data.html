@@ -15,6 +15,10 @@
         // now get the object's values
         var values = _.values(students[0]);
         container.innerHTML += "<p>The student object contains the values: " + values;
+
+        // use the pick() function to get just specific properties
+        var subsetStudent = _.pick(students[0], "lastname", "grade");
+        container.innerHTML += "<p>pick() on lastname, grade: " + subsetStudent.lastname + ", " + subsetStudent.grade;
       });
     </script>
   </head>
