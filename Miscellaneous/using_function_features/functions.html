@@ -17,11 +17,23 @@
 
       window.addEventListener("load", function(e) {
         // create a function that can't be called more than one time
-        log("Initialize the app multiple times:")
-        var initfunc = _.once(doInitialize);
-        initfunc();
-        initfunc();
-        initfunc();
+        //log("Initialize the app multiple times:")
+        //var initfunc = _.once(doInitialize);
+        //initfunc();
+        //initfunc();
+        //initfunc();
+
+        // the throttle() function can be used to limit the number of
+        // times that a function is executed when called repeatedly
+        function updateCharCount() {
+          var elem = document.querySelector("#text1");
+          document.querySelector("#charcount").textContent = (elem.value).length
+        }
+        // will get executed once per second
+        // _.throttle controlls how many the function gets called
+        updater = _.throttle(updateCharCount,1000);
+        document.querySelector("#text1").addEventListener("keydown", updater);
+
       });
     </script>
   </head>
