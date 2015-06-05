@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filtering Collections with Underscore</title>
+    <script type="text/javascript" src="../../underscore.js"></script>
+    <script type="text/javascript" src="../../SampleData.js"></script>
+    <script type="text/javascript">
+      function getPassingStudents(elem) {
+    	  return ((elem.midterm_score + elem.final_score) / 2 > 65);
+      }
+
+      window.addEventListener("load", function(e) {
+      	/* use the filter() function to narrow down the list */
+      	var result = _.filter(students, getPassingStudents);
+
+        /* now use each() to populate the list */
+        _.each(result, function(elem, indx, list) {
+          var container = document.getElementById("container");
+          var student = "<p>" + elem.firstname + " " + elem.lastname + ", Grade: " + elem.grade + "</p>";
+          container.innerHTML = container.innerHTML + student;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Filtering Collections with Underscore</h1>
+    <h2>Students with passing grades:</h2>
+    <div id="container">
+    </div>
+  </body>
+</html>
+
