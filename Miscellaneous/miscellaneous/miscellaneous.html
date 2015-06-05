@@ -13,18 +13,22 @@
 
       window.addEventListener("load", function(e) {
         // create a unique ID, with and without a prefix
-        log("Using uniqueId() to generate an ID for use in the DOM");
-        var sID = _.uniqueId();
-        log("ID with no prefix: " + sID);
-        var sID = _.uniqueId("prefix_");
-        log("ID with prefix: " + sID);
+        //log("Using uniqueId() to generate an ID for use in the DOM");
+        //var sID = _.uniqueId();
+        //log("ID with no prefix: " + sID);
+        //var sID = _.uniqueId("prefix_");
+        //log("ID with prefix: " + sID);
 
         // generate a random number
-        var rand1 = _.random(25); // one argument means between 0 and value
-        log("random number up to 25: " + rand1);
+        //var rand1 = _.random(25); // one argument means between 0 and value
+        //log("random number up to 25: " + rand1);
 
-        var rand2 = _.random(100, 200); // generates value within range
-        log("random number within 100 and 200: " + rand2);
+        //var rand2 = _.random(100, 200); // generates value within range
+        //log("random number within 100 and 200: " + rand2);
+
+        // use the times() function to execute a counter loop
+        log("using _.times():");
+        _.times(5, function(n) {log("times " + n)});
       });
     </script>
   </head>
