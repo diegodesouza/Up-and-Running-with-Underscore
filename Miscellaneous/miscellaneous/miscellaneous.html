@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Underscore Miscellaneous Functions</title>
+    <script type="text/javascript" src="../../underscore.js"></script>
+    <script type="text/javascript" src="../../SampleData.js"></script>
+    <script type="text/javascript">
+      function log(value) {
+        var container = document.getElementById("container");
+        var data = "<p>" + value + "</p>";
+        container.innerHTML = container.innerHTML + data;
+      }
+
+      window.addEventListener("load", function(e) {
+        // create a unique ID, with and without a prefix
+        log("Using uniqueId() to generate an ID for use in the DOM");
+        var sID = _.uniqueId();
+        log("ID with no prefix: " + sID);
+        var sID = _.uniqueId("prefix_");
+        log("ID with prefix: " + sID);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Underscore Miscellaneous Functions</h1>
+    <div id="container">
+    </div>
+  </body>
+</html>
