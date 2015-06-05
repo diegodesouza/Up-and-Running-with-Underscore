@@ -11,7 +11,10 @@
 
       window.addEventListener("load", function(e) {
       	/* use the filter() function to narrow down the list */
-      	var result = _.filter(students, getPassingStudents);
+      	//var result = _.filter(students, getPassingStudents);
+
+        /* use the where() function to select items */
+  		  var result = _.where(students, {"school" : "Thoreau", "grade" : 10});
 
         /* now use each() to populate the list */
         _.each(result, function(elem, indx, list) {
